@@ -1,5 +1,10 @@
 import { useState } from "react";
-import Editor from "./components/Editor";
+import StarterKit from "@tiptap/starter-kit";
+import TextStyle from "@tiptap/extension-text-style";
+import Underline from "@tiptap/extension-underline";
+import Placeholder from "@tiptap/extension-placeholder";
+import { EditorContent, useEditor } from "@tiptap/react";
+import ReadOnlyEditor from "./components/ReadOnlyEditor";
 import "./App.css";
 
 function App() {
@@ -43,14 +48,62 @@ print(result)  # Output: [1, 2, 4, 5]
     },
   ];
 
+  const editor = useEditor({
+    extensions: [
+      StarterKit,
+      TextStyle,
+      Underline,
+      Placeholder.configure({
+        placeholder: "Ask Doe anything you’d like about the world...",
+        emptyEditorClass: "is-empty",
+      }),
+    ],
+    content: "", // Empty content initially
+  });
+
   return (
     <>
       <div className="sidebar">
-        {icons.map((icon) => (
+        {/* {icons.map((icon) => (
           <div className="sidebar-icon">
             <img src={`/icons/${icon.name}.png`} alt={icon.name} />
           </div>
-        ))}
+        ))} */}
+        <div
+          className="sidebar-icon"
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          disabled={!editor.can().chain().focus().toggleBold().run()}
+        >
+          <img src={`/icons/bold.png`} alt="bold" />
+        </div>
+        <div
+          className="sidebar-icon"
+          onClick={() => editor.chain().focus().toggleItalic().run()}
+          disabled={!editor.can().chain().focus().toggleItalic().run()}
+        >
+          <img src={`/icons/italic.png`} alt="italic" />
+        </div>
+        <div
+          className="sidebar-icon"
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+          disabled={!editor.can().chain().focus().toggleUnderline().run()}
+        >
+          <img src={`/icons/underline.png`} alt="underline" />
+        </div>
+        <div
+          className="sidebar-icon"
+          onClick={() => editor.chain().focus().toggleStrike().run()}
+          disabled={!editor.can().chain().focus().toggleStrike().run()}
+        >
+          <img src={`/icons/strike.png`} alt="strike" />
+        </div>
+        <div
+          className="sidebar-icon"
+          onClick={() => editor.chain().focus().toggleCode().run()}
+          disabled={!editor.can().chain().focus().toggleCode().run()}
+        >
+          <img src={`/icons/code.png`} alt="code" />
+        </div>
       </div>
       <div className="main-container">
         <div className="container-wrapper">
@@ -64,12 +117,10 @@ print(result)  # Output: [1, 2, 4, 5]
           </div>
           <div className="content-container">
             <div className="question-container">
-              <div className="question-text">
-              Create a small project for me in any language.
-              </div>
+              <div className="question-text">Create a small project for me in any language.</div>
             </div>
             <div className="editor-container">
-              <Editor content={content} />
+              <ReadOnlyEditor content={content} />
               <div className="gpt-icon">
                 <img src="/icons/logo.png" alt="bold" />
               </div>
@@ -83,11 +134,12 @@ print(result)  # Output: [1, 2, 4, 5]
           <div className="icon-container">
             <img src="/icons/ai.png" alt="ai" />
           </div>
-          <input
+          {/* <input
             type="text"
             className="input-field"
             placeholder="Ask Doe anything you’d like about the world..."
-          />
+          /> */}
+          <EditorContent editor={editor} className="editor" />
           <div className="icon-button" style={{ backgroundColor: "rgba(181, 181, 181, 0.2)" }}>
             <img src="/icons/copy.png" alt="send" />
           </div>

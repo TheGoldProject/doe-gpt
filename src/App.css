@@ -125,7 +125,7 @@
   padding: 10px;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); */
 }
 
 .icon-container {
@@ -148,13 +148,44 @@
   font-weight: 500;
 }
 
-.input-field::placeholder {
+.editor {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+}
+
+.editor:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Placeholder Styling */
+.is-empty::before {
+  content: attr(data-placeholder);
   color: transparent;
-  background: linear-gradient(90deg, rgba(181, 181, 181, 1), rgba(181, 181, 181, 0.2));
+  background: linear-gradient(90deg, rgba(181, 181, 181, 1), rgba(181, 181, 181, 0.4));
   -webkit-background-clip: text;
   background-clip: text;
-  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-field::placeholder {
+  color: transparent;
+  background: linear-gradient(90deg, rgba(181, 181, 181, 1), rgba(181, 181, 181, 0.4));
+  -webkit-background-clip: text;
+  background-clip: text;
   font-size: 16px;
+}
+
+.tiptap:focus-visible {
+  outline: none;
 }
 
 .send-button {

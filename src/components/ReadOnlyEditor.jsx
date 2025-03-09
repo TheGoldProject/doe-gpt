@@ -6,7 +6,7 @@ import { common, createLowlight } from "lowlight";
 import Prism from "prismjs"; // Import PrismJS
 import "prismjs/components/prism-python"; // Add Python syntax support
 import "prism-themes/themes/prism-dracula.css"; // Use Dracula theme
-import "./Editor.less";
+import "./ReadOnlyEditor.less";
 
 const lowlight = createLowlight(common);
 
