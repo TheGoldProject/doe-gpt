@@ -1,0 +1,218 @@
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  width: 76px;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.sidebar-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 76px;
+  background-color: #f8f8f8;
+}
+
+.container-wrapper {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.float-icon-container {
+  position: absolute;
+  top: 0px;
+  left: -40px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.float-icon {
+  width: 38px;
+  height: 38px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.question-container {
+  
+  display: flex;
+  justify-content: end;
+  margin-bottom: 16px;
+}
+
+.question-text {
+  border: 1px dashed #B5B5B5;
+  border-radius: 12px;
+  padding: 4px 8px;
+  float: left;
+}
+
+.editor-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  
+}
+
+.gpt-icon {
+  position: absolute;
+  top: 16px;
+  left: -60px;
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.chat-container {
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.chatbox {
+  width: 50%;
+  background-color: #f8f8f8;
+  border: 1px solid #dddddd;
+  border-radius: 16px;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.icon-container {
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 12px 0 #1f1f1f1a;
+}
+
+.input-field {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-field::placeholder {
+  color: transparent;
+  background: linear-gradient(90deg, rgba(181, 181, 181, 1), rgba(181, 181, 181, 0.2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.send-button {
+  height: 40px;
+  background-color: #1f1f1f;
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dddddd;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
