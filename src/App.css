@@ -110,7 +110,7 @@
 }
 
 .chat-container {
-  height: 56px;
+  min-height: 56px;
   display: flex;
   justify-content: center;
   padding-bottom: 40px;
@@ -161,6 +161,15 @@
 .editor:focus {
   outline: none;
   border-color: #007bff;
+}
+
+.is-empty {
+  margin: 0px;
+}
+
+.tiptap p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
 }
 
 /* Placeholder Styling */
