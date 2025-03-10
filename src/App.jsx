@@ -139,7 +139,7 @@ print(result)  # Output: [1, 2, 4, 5]
             className="input-field"
             placeholder="Ask Doe anything you’d like about the world..."
           /> */}
-          <EditorContent editor={editor} className="editor" />
+          <EditorContent editor={editor} className="chat-editor" />
           <div className="icon-button" style={{ backgroundColor: "rgba(181, 181, 181, 0.2)" }}>
             <img src="/icons/copy.png" alt="send" />
           </div>
